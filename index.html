@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="site-title">TRADE FINDER</title>
+
+  <!-- ✅ NEW Meta Pixel Code (replaced) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1780859583117931');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1780859583117931&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #fff;
+      position: relative;
+      min-height: 100vh;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    }
+    .glass-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 40px 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      max-width: 650px;
+      width: 100%;
+    }
+    .logo img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 3px solid #ffcc00;
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.08);
+    }
+    h1 {
+      font-weight: 700;
+      color: #ffcc00;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .crown {
+      color: gold;
+      animation: shine 2s infinite linear;
+    }
+    @keyframes shine {
+      0% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+      100% { opacity: 0.6; transform: scale(1); }
+    }
+    h2 {
+      font-weight: 600;
+      margin-top: 30px;
+      color: #00ffb3;
+    }
+    p {
+      color: #ddd;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    a.cta-btn {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+      display: inline-block;
+      margin: 18px 0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+      animation: pulse 1.5s infinite;
+      cursor: pointer;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,198,255,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(0,198,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,198,255,0); }
+    }
+    .highlight {
+      color: #00ff88;
+      font-weight: 600;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.08);
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 15px;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+    /* Tiny side text: Ad manage by Karan Agency */
+    .ad-manage-tag {
+      position: fixed;
+      bottom: 10px;
+      right: 12px;
+      font-size: 10px;
+      color: #888;
+      background: rgba(0,0,0,0.3);
+      padding: 4px 10px;
+      border-radius: 30px;
+      backdrop-filter: blur(6px);
+      z-index: 999;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      pointer-events: none;
+    }
+    .ad-manage-tag i {
+      font-size: 9px;
+      margin-right: 4px;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Easy Variables -->
+  <script>
+    const SITE_NAME = "TRADE FINDER";
+    const SITE_IMAGE = "https://karanmetalabe.com/wp-content/uploads/2026/05/wordpress_optimized_image.jpg"; // 🔄 NEW logo
+    const TELEGRAM_LINK = "https://t.me/+NIBMKzHyeqQ0MjU1";
+  </script>
+
+  <section class="hero">
+    <div class="glass-box">
+      <div class="logo">
+        <img id="site-logo" alt="Brand Logo">
+      </div>
+      <h1 id="site-heading"></h1>
+      <p>✅ Trusted by thousands of learners</p>
+
+      <div class="stats">
+        <div class="stat-box">24/7 Updates</div>
+        <div class="stat-box">Free to Join</div>
+      </div>
+
+      <!-- ✅ Telegram Join Button with Lead Event Tracking (new pixel) -->
+      <a id="cta-btn-1" class="cta-btn" onclick="fbq('track', 'Lead');">
+        <i class="fa-brands fa-telegram me-1"></i> Join on Telegram
+      </a>
+
+      <div class="benefits">
+        <div class="benefit-card"><i class="fa-solid fa-check-circle highlight"></i> Market Insights & Discussions</div>
+        <div class="benefit-card"><i class="fa-solid fa-check-circle highlight"></i> Learn with Experts</div>
+        <div class="benefit-card"><i class="fa-solid fa-check-circle highlight"></i> Practical Strategies</div>
+      </div>
+
+      <!-- REMOVED: "Stay Ahead with Knowledge", Ads by ADSGURU, adguru logo -->
+    </div>
+  </section>
+
+  <!-- Tiny side text: Ad manage by Karan Agency -->
+  <div class="ad-manage-tag">
+    <i class="fa-solid fa-bolt"></i> Ad manage by Karan Agency
+  </div>
+
+  <!-- Auto Apply Variables & Event Tracking (updated for new pixel) -->
+  <script>
+    document.getElementById("site-title").innerText = SITE_NAME;
+    document.getElementById("site-heading").innerHTML = 
+      `<i class="fa-solid fa-crown crown"></i> ${SITE_NAME} <i class="fa-solid fa-crown crown"></i>`;
+    document.getElementById("site-logo").src = SITE_IMAGE;
+    
+    const ctaBtn1 = document.getElementById("cta-btn-1");
+    ctaBtn1.href = TELEGRAM_LINK;
+    
+    // (cta-btn-2 removed, no error)
+  </script>
+
+</body>
+</html>
